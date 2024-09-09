@@ -16,11 +16,8 @@ const students = {
 app.get('/user-info/:id', (req, res) => {
   const studentId = req.params.id;
 
-  // Validation Id is a number
-  if (!Number.isInteger(Number(studentId))) {
-    return res.status(400).json({ error: 'ID debe ser un número entero' });
-  }
-  // Verificar si el estudiante existe
+  
+  // Student exist
   const student = students[studentId];
   if (student) {
     res.json(student);
