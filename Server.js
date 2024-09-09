@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
+
+
 // Information Students
 const students = {
   1: {
@@ -10,6 +12,8 @@ const students = {
     email: "ritatrcr@unisabana.edu.cp",
     id: "297040"
   }
+
+  //here goes the information of student 2
 };
 
 // Endpoint to get students information with the ID
