@@ -1,5 +1,5 @@
 [build]
-  functions = "netlify/functions"
+  functions = "netlify-functions"
 
-[dev]
-  command = "npm start"
+[context.production.environment]
+  NODE_VERSION = "14"
