@@ -1,0 +1,7 @@
+[build]
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/user-info/*"
+  to = "/.netlify/functions/user-info"
+  status = 200
