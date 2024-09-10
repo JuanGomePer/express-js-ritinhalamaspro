@@ -1,8 +1,6 @@
 const express = require('express');
+const serverless = require('serverless-http');
 const app = express();
-const port = 3000;
-
-
 
 // Information Students
 const students = {
@@ -29,8 +27,8 @@ app.get('/user-info/:id', (req, res) => {
     return res.status(400).json({ error: 'ID debe ser un número entero' });
   }
   
-  // Check if the student exists in the data
   const student = students[studentId];
+  // Check if the student exists in the data
   if (student) {
     res.json(student);
   } else {
@@ -38,10 +36,4 @@ app.get('/user-info/:id', (req, res) => {
   }
 });
 
-
-
-
-// Start server
-app.listen(port, () => {
-  console.log(`Servidor corriendo en http://localhost:${port}`);
-});
+module.exports.handler = serverless(app);
